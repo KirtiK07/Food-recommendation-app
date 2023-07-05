@@ -4,10 +4,18 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #F4A4A4;
+    background-color: #423E37;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .form-check-input:checked {
     background-color: black;
     border-color: black;
+}
+
+form button {
+    margin: 0 auto !important;
+    width: 100% !important;
+
 }
