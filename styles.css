@@ -24,3 +24,17 @@ body {
     gap: 10px;
     align-items: center;
 }
+
+.restaurant_container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #423E37;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.restaurant_container div {
+    padding-top: 15px;
+}
