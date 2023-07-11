@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu form</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #423E37;
+            margin: 0;
+            padding: 20px;
+
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .form-check {
+            margin-bottom: 12px;
+        }
+
+        .form-check label {
+            margin-left: 5px;
+        }
+
+        #restaurant-image {
+            margin-bottom: 12px;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .accordion:hover,
+        .accordion.active {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            overflow-y: auto;
+        }
+
+        .nested-accordion {
+            margin-left: 20px;
+        }
+
+        .add-button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .add-button {
+            padding: 10px 20px;
+            font-size: 15px;
+            background-color: #423E37;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .add-button:hover {
+            background-color: #423E37;
+
+        }
+    </style>
+    <img src="assets/Swaad KhojiTransparentE3B23C.png" width="150px">
+    <div class="form-container">
+        <h2>Restaurant Menu</h2>
+        <form>
+            <div class="form-group">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" required>
+            </div>
+            <div class="form-group">
+                <label for="item-type">Item Type:</label>
+                <select id="item-type" required>
+                    <option value="pizza">Pizza</option>
+                    <option value="burger">Burger</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="item-name">Description</label>
+                <input type="text" id="item-name" placeholder="About the dish...">
+            </div>
+        </form>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Veg
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Non-Veg
+            </label>
+        </div>
+
+        <div>
+            <label for="restaurant-image">Upload Image:</label>
+            <input type="file" id="restaurant-image" accept="image/*">
+            <img id="preview-image" alt="Preview Image" style="display: none;">
+        </div>
+
+        <button class="accordion">Ingredients</button>
+        <div class="panel">
+            <div class="nested-accordion">
+                <button class="accordion">Vegetables</button>
+                <div class="panel">
+                    <input type="checkbox" id="spinach" name="Vegetables" value="spinach">
+                    <label for="spinach">Spinach</label><br>
+                    <input type="checkbox" id="tomato" name="Vegetables" value="tomato">
+                    <label for="tomato">Tomato</label><br>
+                    <input type="checkbox" id="potato" name="Vegetables" value="potato">
+                    <label for="potato">Potato</label><br>
+                    <input type="checkbox" id="onion" name="Vegetables" value="onion">
+                    <label for="onion">Onion</label><br>
+                    <input type="checkbox" id="lettuce" name="Vegetables" value="lettuce">
+                    <label for="lettuce">Lettuce</label><br>
+                    <input type="checkbox" id="jalapeno" name="Vegetables" value="jalapeno">
+                    <label for="jalapeno">Jalapeno</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Meat</button>
+                <div class="panel">
+                    <input type="checkbox" id="chicken" name="Chicken" value="chicken">
+                    <label for="chicken">Chicken</label><br>
+                    <input type="checkbox" id="beef" name="Chicken" value="beef">
+                    <label for="beef">Beef</label><br>
+                    <input type="checkbox" id="chicken_jalfrezi" name="Chicken" value="chicken_jalfrezi">
+                    <label for="chicken_jalfrezi">Chicken Jalfrezi</label><br>
+                    <input type="checkbox" id="marinated_chicken" name="Chicken" value="marinated_chicken">
+                    <label for="marinated_chicken">Marinated Chicken</label><br>
+                    <input type="checkbox" id="grilled_chicken" name="Chicken" value="grilled_chicken">
+                    <label for="grilled_chicken">Grilled Chicken</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Dairy Product</button>
+                <div class="panel">
+                    <input type="checkbox" id="cheddar" name="Cheese" value="cheddar">
+                    <label for="cheddar">Cheddar</label><br>
+                    <input type="checkbox" id="mozzarella" name="Cheese" value="mozzarella">
+                    <label for="mozzarella">Mozzarella</label><br>
+                    <input type="checkbox" id="swiss" name="Cheese" value="swiss">
+                    <label for="swiss">Swiss</label><br>
+                    <input type="checkbox" id="american_cheese" name="Cheese" value="american_cheese">
+                    <label for="american_cheese">American Cheese</label><br>
+                    <input type="checkbox" id="paneer" name="Cheese" value="paneer">
+                    <label for="paneer">Paneer</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Sauces</button>
+                <div class="panel">
+                    <input type="checkbox" id="tomato-ketchup" name="Ketchup" value="tomato-ketchup">
+                    <label for="tomato-ketchup">Tomato Ketchup</label><br>
+                    <input type="checkbox" id="bbq-sauce" name="Ketchup" value="bbq-sauce">
+                    <label for="bbq-sauce">BBQ Sauce</label><br>
+                    <input type="checkbox" id="mayonnaise" name="Ketchup" value="mayonnaise">
+                    <label for="mayonnaise">Mayonnaise</label><br>
+                    <input type="checkbox" id="special_sauce" name="Ketchup" value="special_sauce">
+                    <label for="special_sauce">Special Sauce</label><br>
+                    <input type="checkbox" id="hot_sauce" name="Ketchup" value="hot_sauce">
+                    <label for="hot_sauce">Hot Sauce</label><br>
+                    <input type="checkbox" id="egg_mayo" name="Ketchup" value="egg_mayo">
+                    <label for="egg_mayo">Egg Mayonnaise</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Herbs</button>
+                <div class="panel">
+                    <input type="checkbox" id="spring-onion" name="Spring" value="spring-onion">
+                    <label for="spring-onion">Spring Onion</label><br>
+                    <input type="checkbox" id="cilantro" name="Spring" value="cilantro">
+                    <label for="cilantro">Cilantro</label><br>
+                    <input type="checkbox" id="parsley" name="Spring" value="parsley">
+                    <label for="parsley">Parsley</label><br>
+                    <input type="checkbox" id="basil_leaves" name="Spring" value="basil_leaves">
+                    <label for="basil_leaves">Basil Leaves</label><br>
+                    <input type="checkbox" id="spinach" name="Spring" value="spinach">
+                    <label for="spinach">Spinach</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Spices</button>
+                <div class="panel">
+                    <input type="checkbox" id="garlic-powder" name="Sprinkles" value="garlic-powder">
+                    <label for="garlic-powder">Garlic Powder</label><br>
+                    <input type="checkbox" id="chilly-flakes" name="Sprinkles" value="chilly-flakes">
+                    <label for="chilly-flakes">Chilly Flakes</label><br>
+                    <input type="checkbox" id="oregano" name="Sprinkles" value="oregano">
+                    <label for="oregano">Oregano</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Bread/Dough</button>
+                <div class="panel">
+                    <input type="checkbox" id="white-flour" name="bread" value="white-flour">
+                    <label for="white-flour">Thin Crust</label><br>
+                    <input type="checkbox" id="rye-flour" name="bread" value="rye-flour">
+                    <label for="rye-flour">Rye Flour</label><br>
+                    <input type="checkbox" id="wheat-bun" name="bread" value="wheat-bun">
+                    <label for="wheat-bun">Wheat Bun</label><br>
+                </div>
+            </div>
+
+            <div class="nested-accordion">
+                <button class="accordion">Others</button>
+                <div class="panel">
+                    <input type="checkbox" id="corn" name="others" value="corn">
+                    <label for="corn">Corn</label><br>
+                    <input type="checkbox" id="Pineapple" name="others" value="Pineapple">
+                    <label for="Pineapple">Pineapple</label><br>
+                    <input type="checkbox" id="choclate-chips" name="others" value="choclate-chips">
+                    <label for="choclate-chips">Choclate Chips</label><br>
+                    <input type="checkbox" id="grilled-vegetables" name="others" value="grilled-chicken">
+                    <label for="grilled-vegetables">Grilled Vegetables</label><br>
+                    <input type="checkbox" id="chicken-jalfrezi" name="others" value="chicken-jalfrezi">
+                    <label for="chicken-jalfrezi">Chicken Jalfrezi</label><br>
+                    <input type="checkbox" id="nuts" name="others" value="nuts">
+                    <label for="nuts">Nuts</label><br>
+                </div>
+            </div>
+
+            <button class="accordion">Allergies</button>
+            <div class="panel">
+                <div class="nested-accordion">
+                    <input type="checkbox" id="corn" name="others" value="corn">
+                    <label for="corn">Lactose intolerance</label><br>
+                    <input type="checkbox" id="Pineapple" name="others" value="Pineapple">
+                    <label for="Pineapple">anaphylaxis</label><br>
+                    <input type="checkbox" id="choclate-chips" name="others" value="choclate-chips">
+                    <label for="choclate-chips">Pollen allergy</label><br>
+                </div>
+            </div>
+
+            <div class="add-button-container">
+                <button class="add-button">Add Item</button>
+            </div>
+
+
+
+
+            <script>
+
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    var addButton = document.querySelector(".add-button");
+                    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+                    addButton.addEventListener("click", function () {
+                        checkboxes.forEach(function (checkbox) {
+                            checkbox.checked = false;
+                        });
+                    });
+                });
+
+
+            </script>
+
+
+</body>
+
+</html>
